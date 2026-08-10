@@ -12,7 +12,7 @@ from mathutils import Vector
 csv_path = r"C:\Users\hengy\OneDrive - Georgia Institute of Technology\Desktop\auxetic paper\3D_Sketch_Points.csv"
 
 scale = 0.01 # SolidWorks mm -> Blender 
-unitscale = 4.9 # mm
+unitscale = 4.9 # Wireframe interval
 
 strut_width = 3 * scale
 strut_height = 3 * scale
