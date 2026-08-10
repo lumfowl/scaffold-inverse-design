@@ -4,83 +4,19 @@ import math
 import bmesh
 from mathutils import Vector
 
+
 # =====================================================
 # USER SETTINGS
 # =====================================================
 
-csv_path = r"Your CSV Path"
+csv_path = r"C:\Users\hengy\OneDrive - Georgia Institute of Technology\Desktop\auxetic paper\3D_Sketch_Points.csv"
 
-scale = 0.01       # SolidWorks mm -> Blender
-unitscale = 4.9    # Wireframe interval
+scale = 0.01 # SolidWorks mm -> Blender 
+unitscale = 4.9 # mm
 
-# Target effective elastic modulus
-target_modulus_kPa = 57.027
+strut_width = 3 * scale
+strut_height = 3 * scale
 
-
-# =====================================================
-# EXPERIMENTAL CALIBRATION
-# =====================================================
-
-calibration_enabled = True
-
-# Experimental calibration point
-calibration_strut_width_mm = 1.0
-calibration_modulus_kPa = 19.61225
-
-# =====================================================
-# SIMULATION EQUATION
-# =====================================================
-
-SIM_COEFFICIENT = 27.986
-SIM_EXPONENT = 3.8649
-
-
-# =====================================================
-# CALIBRATION
-# =====================================================
-
-def calculate_calibration_factor(
-    calibration_strut_width_mm,
-    calibration_modulus_kPa
-):
-
-    simulated_modulus = (
-        SIM_COEFFICIENT
-        * calibration_strut_width_mm ** SIM_EXPONENT
-    )
-
-    return calibration_modulus_kPa / simulated_modulus
-
-
-calibration_factor = 1.0
-
-if calibration_enabled:
-    calibration_factor = calculate_calibration_factor(
-        calibration_strut_width_mm,
-        calibration_modulus_kPa
-    )
-
-
-# =====================================================
-# PREDICT STRUT WIDTH
-# =====================================================
-
-def predict_strut_width(target_modulus_kPa):
-    
-    return (
-        target_modulus_kPa
-        / (calibration_factor * SIM_COEFFICIENT)
-    ) ** (1.0 / SIM_EXPONENT)
-
-# =====================================================
-# CALCULATE STRUT WIDTH
-# =====================================================
-
-strut_width_mm = predict_strut_width(target_modulus_kPa)
-
-# Convert to Blender units
-strut_width = strut_width_mm * scale
-strut_height = strut_width_mm * scale
 
 # =====================================================
 # READ EDGES
