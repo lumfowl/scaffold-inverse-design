@@ -8,7 +8,7 @@ from mathutils import Vector
 # USER SETTINGS
 # =====================================================
 
-csv_path = r"C:\Users\hengy\OneDrive - Georgia Institute of Technology\Desktop\auxetic paper\3D_Sketch_Points.csv"
+csv_path = r"Your CSV Path"
 
 scale = 0.01       # SolidWorks mm -> Blender
 unitscale = 4.9    # Wireframe interval
