@@ -1,10 +1,10 @@
 # scaffold-inverse-design
-Computational framework for inverse design of tunable auxetic scaffolds based on target effective elastic modulus.
+Computational framework for inverse design of tunable rectangular scaffolds based on target effective elastic modulus.
 # Inverse Design of Tunable Auxetic Scaffolds
 
 ## Overview
 
-This repository contains a computational workflow for the **inverse design of tunable auxetic scaffolds based on a target effective elastic modulus**.
+This repository contains a computational workflow for the **inverse design of tunable rectangular auxetic scaffolds based on a target effective elastic modulus**.
 
 The workflow converts a CAD wireframe into a parameterized 3D scaffold, with strut width determined from a target effective modulus.
 
@@ -32,10 +32,18 @@ For the lattice used in this work, each unit cell is rectangular. The coordinate
 
 ### 3. Inverse Design and Scaffold Generation
 
-Use:
+For generating a scaffold with a predetermined strut dimensions, use:
 
 ```text
 code/blender/scaffold_generator.py
+```
+
+This script generates an auxetic scaffold based on the wireframe csv with the user designated strut and wireframe dimensions. 
+
+For generating a scaffold with a desired effective elastic modulus, use:
+
+```text
+code/blender/predict_strut
 ```
 
 The script predicts the required strut width from the target effective elastic modulus and generates the corresponding 3D scaffold.
