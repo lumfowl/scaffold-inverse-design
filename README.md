@@ -77,28 +77,6 @@ The resulting scaffold can be exported to FEBio or another FEA package for mecha
 
 ---
 
-## Repository Structure
-
-```text
-auxetic-scaffold-framework/
-│
-├── README.md
-├── code/
-│   ├── solidworks/
-│   │   └── 3d_sketch_to_csv_VBA_macro/
-│   ├── blender/
-│   │   └── scaffold_generator.py
-│   └── analysis/
-│
-├── data/
-│   ├── raw/
-│   ├── normalized/
-│   └── experimental/
-│
-├── geometry/
-└── simulations/
-```
-
 ## Citation
 
 If you use this code or workflow in your research, please cite the associated publication:
