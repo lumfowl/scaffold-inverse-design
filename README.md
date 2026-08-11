@@ -50,9 +50,7 @@ The script predicts the required strut width from the target effective elastic m
 
 The simulation-derived relationship is:
 
-[
-E_{\mathrm{eff}} = 27.986(sw)^{3.8649}
-]
+`E_eff = 27.986 * sw^3.8649`
 
 where (E_{\mathrm{eff}}) is in kPa and (sw) is in mm.
 
